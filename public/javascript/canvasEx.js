@@ -1,19 +1,34 @@
-function draw(){
-	var canvas = document.getElementById('drawHere')
-	if(canvas.getContext){
-		var ctx = canvas.getContext('2d');
-		//illustration code goes here
-	} else {
-		console.log('not rendering');
-	}
-}
+// function draw(){
+// 	var canvas = document.getElementById('drawHere')
+// 	if(canvas.getContext){
+// 		var ctx = canvas.getContext('2d');
+// 		//illustration code goes here
+// 	} else {
+// 		console.log('not rendering');
+// 	}
+// }
 
-var wordSearch = (function(){
+(function createRowsThenLetterInside(){
+	for (var i = 0; i <= 10; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters"></tr>';
+		writeRandLettersInTable();
+	};
+})();
+
+function writeRandLettersInTable(){
 	//random characters are returned with this
 	var characters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-	var random = parseInt(Math.random()*characters.length);
-	console.log(random);
-	console.log(characters.charAt(random));
-	var letters = characters.charAt(random); //returning letter at the random index number that is generated from random number chosen between 1-27
-	document.getElementById('ws').innerHTML = '<p>'+ letters +'</p>';
-})();
+	for (var i = 0; i <= 10; i++){
+		var random = parseInt(Math.random()*characters.length);
+		var letter = characters.charAt(random); //returning letter at the random index number that is generated from random number chosen between 1-27
+		document.getElementsByClassName('randomLetters')[i].innerHTML += '<td>' + letter + '</td>';
+	}
+};
+
+
+
+
+
+
+
+
