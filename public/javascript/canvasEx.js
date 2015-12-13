@@ -40,6 +40,14 @@ function writeRandLettersInTable(){
 	}
 })();
 
+(function writeBoolean(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+		// document.getElementsByClassName('randomLetters')[i].innerHTML += '<td>' + dtString[i] + '</td>';
+	}
+})();
+
 
 
 // function draw(){
