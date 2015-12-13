@@ -44,12 +44,43 @@ function writeRandLettersInTable(){
 	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
 	for (var i = 0; i <= dtString.length -1; i++){
 		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
-		// document.getElementsByClassName('randomLetters')[i].innerHTML += '<td>' + dtString[i] + '</td>';
 	}
 })();
 
+(function writeNumber(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+	}
+})();
 
+(function writeNull(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+	}
+})();
 
+(function writeUndefined(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+	}
+})();
+
+(function writeObject(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+	}
+})();
+
+(function writeArray(){
+	var dtString = ["B", "O", "O", "L", "E", "A", "N"];
+	for (var i = 0; i <= dtString.length -1; i++){
+		document.getElementById('searchBox').innerHTML += '<tr class="randomLetters">'+ dtString[i] + '</tr>';
+	}
+})();
 // function draw(){
 // 	var canvas = document.getElementById('drawHere')
 // 	if(canvas.getContext){
