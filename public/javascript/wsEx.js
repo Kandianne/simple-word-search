@@ -3,9 +3,22 @@
 
 function showSubmit() {
 	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
-	var arrayOfTds = document.getElementsByClassName('answerLetter');
-	console.log(arrayOfTds);
-};
+	var arrayOfAnswers = document.getElementsByClassName('answerLetter');
+	var arrayOfRandoms = document.getElementsByTagName('td');
+	// for(var i = 0; i < arrayOfTds.length; i++){
+		$('.randomLetters').each(function(index){
+			$(this).click(function(){
+				document.getElementById('yourChoice').innerHTML = arrayOfRandoms[index].innerHTML;
+				console.log(arrayOfRandoms[index]);
+			})
+		})
+		$('.answerLetter').each(function(index){
+			document.getElementById('yourChoice').innerHTML = arrayOfAnswers[index].innerHTML;
+		// }
+	});
+	};
+
+
 
 //==============CREATING GRID OF RANDOM LETTERS=======================================
 
@@ -19,7 +32,7 @@ for(var i = 0; i <= rows; i++) {
 		var characters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'; 
 		var random = parseInt(Math.random()*characters.length);
         var letter = characters.charAt(random); //returning random letter
-        html += '<td onclick="showSubmit()">' + letter + '</td>'; 
+        html += '<td class="randomLetters" onclick="showSubmit()">' + letter + '</td>'; 
     } 
     html += '</tr>'; 
 }
