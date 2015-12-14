@@ -2,6 +2,14 @@
 
 //==============CREATING GRID OF RANDOM LETTERS=======================================
 
+
+function showSubmit() {
+	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
+	document.getElementsByTagName('td')[0].setAttribute( 'class', 'selected' );
+	console.log(document.getElementsByTagName('td'))
+};
+
+
 var cols = 20; 
 var rows = 10; 
 var html = ""; 
@@ -12,7 +20,7 @@ for(var i = 0; i <= rows; i++) {
 		var characters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ'; 
 		var random = parseInt(Math.random()*characters.length);
         var letter = characters.charAt(random); //returning random letter
-        html += '<td>' + letter + '</td>'; 
+        html += '<td onclick="showSubmit()">' + letter + '</td>'; 
     } 
     html += '</tr>'; 
 }
