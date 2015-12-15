@@ -9,11 +9,15 @@ function showSubmit() {
 	$('.randomLetters').each(function(index){
 		$(this).click(function(){
 			console.log(this);
-			document.getElementById('yourChoice').innerHTML += this.innerHTML;
+			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '<i>';
+			console.log(document.getElementById('yourChoice'))
 		})
 	})
+		console.log(document.getElementsByTagName('i'));
+
 	$('.answerLetter').each(function(index){
 		$(this).click(function(){
+			console.log(this);
 			document.getElementById('yourChoice').innerHTML += this.innerHTML;
 		})
 	})
