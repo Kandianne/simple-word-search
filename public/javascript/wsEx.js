@@ -5,18 +5,19 @@ function showSubmit() {
 	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
 	var arrayOfAnswers = document.getElementsByClassName('answerLetter');
 	var arrayOfRandoms = document.getElementsByTagName('td');
-	// for(var i = 0; i < arrayOfTds.length; i++){
-		$('.randomLetters').each(function(index){
-			$(this).click(function(){
-				document.getElementById('yourChoice').innerHTML = arrayOfRandoms[index].innerHTML;
-				console.log(arrayOfRandoms[index]);
-			})
+
+	$('.randomLetters').each(function(index){
+		$(this).click(function(){
+			console.log(this);
+			document.getElementById('yourChoice').innerHTML += this.innerHTML;
 		})
-		$('.answerLetter').each(function(index){
-			document.getElementById('yourChoice').innerHTML = arrayOfAnswers[index].innerHTML;
-		// }
-	});
-	};
+	})
+	$('.answerLetter').each(function(index){
+		$(this).click(function(){
+			document.getElementById('yourChoice').innerHTML += this.innerHTML;
+		})
+	})
+};
 
 
 
