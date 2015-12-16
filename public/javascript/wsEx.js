@@ -1,7 +1,7 @@
 
 //==============SUBMITTING ANSWERS=======================================
 
-function showSubmit() {
+function showSubmit(loopThruSubmission) {
 	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
 	var arrayOfAnswers = document.getElementsByClassName('answerLetter');
 	var arrayOfRandoms = document.getElementsByTagName('td');
@@ -10,7 +10,6 @@ function showSubmit() {
 		$(this).click(function(){
 			console.log(this);
 			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '<i>';
-			console.log(document.getElementById('yourChoice'))
 		})
 	})
 		console.log(document.getElementsByTagName('i'));
@@ -18,9 +17,13 @@ function showSubmit() {
 	$('.answerLetter').each(function(index){
 		$(this).click(function(){
 			console.log(this);
-			document.getElementById('yourChoice').innerHTML += this.innerHTML;
+			document.getElementById('yourChoice').innerHTML += '<i>' +  this.innerHTML + '<i>';;
 		})
 	})
+
+	function loopThruSubmission(){
+		console.log(document.getElementById('yourChoice'));
+	}
 };
 
 
