@@ -1,37 +1,5 @@
 
-//==============SUBMITTING ANSWERS=======================================
-var addLettersAr = [];
-
-function showSubmit(loopThruSubmission) {
-	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
-	// var arrayOfAnswers = document.getElementsByClassName('answerLetter');
-	// var arrayOfRandoms = document.getElementsByTagName('td');
-
-	$('.randomLetters').each(function(index){
-		$(this).click(function(){
-			console.log(this);
-			addLettersAr.push(this.innerHTML);
-			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '</i>';
-			console.log(this.innerHTML);
-		})
-	})
-
-	$('.answerLetter').each(function(index){
-		$(this).click(function(){
-			console.log(this);
-			addLettersAr.push(this.innerHTML);
-			document.getElementById('yourChoice').innerHTML += '<i>' +  this.innerHTML + '</i>';
-		})
-	})
-
-	console.log(addLettersAr);
-	function loopThruSubmission(){
-		console.log(document.getElementById('yourChoice'));
-	}
-};
-
-
-
+	
 //==============CREATING GRID OF RANDOM LETTERS=======================================
 
 var cols = 20; 
@@ -100,6 +68,37 @@ for(var i = 0; i <= dtUndefined.length - 1; i++){
 }
 
 
+//==============SUBMITTING ANSWERS=======================================
+// var addLettersAr = [];
+
+
+function showSubmit() {
+	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
+	// var arrayOfAnswers = document.getElementsByClassName('answerLetter');
+	// var arrayOfRandoms = document.getElementsByTagName('td');
+
+	// console.log(addLettersAr);
+	// function loopThruSubmission(){
+	// 	console.log(document.getElementById('yourChoice'));
+	// }
+};
+
+	$('.randomLetters').each(function(index){
+		$(this).click(function(){
+			console.log(this);
+			// addLettersAr.push(this.innerHTML);
+			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '</i>';
+			console.log(this.innerHTML);
+		});
+	});
+
+	$('.answerLetter').each(function(index){
+		$(this).click(function(){
+			console.log(this);
+			// addLettersAr.push(this.innerHTML);
+			document.getElementById('yourChoice').innerHTML += '<i>' +  this.innerHTML + '</i>';
+		});
+	});
 
 // var firstCol = [];
 
