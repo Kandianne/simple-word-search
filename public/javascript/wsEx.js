@@ -18,9 +18,11 @@ for(var i = 0; i <= rows; i++) {
 }
 
 document.getElementById('wsBox').innerHTML += html;
-//==============REPLACING LETTERS ON GRID WITH ANSWERS=======================================
 
-//cells are columns, rows are children.
+
+//==============REPLACING CERTAIN LETTERS ON GRID WITH ANSWERS=======================================
+
+//CELLS ARE COLUMNS, ROWS CHILDREN
 var dtBoolean = 'BOOLEAN';
 dtBoolean = dtBoolean.split('')
 for(var i = 0; i <= dtBoolean.length - 1; i++){
@@ -69,50 +71,43 @@ for(var i = 0; i <= dtUndefined.length - 1; i++){
 
 
 //==============SUBMITTING ANSWERS=======================================
-// var addLettersAr = [];
 
 
 function showSubmit() {
 	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
-	// var arrayOfAnswers = document.getElementsByClassName('answerLetter');
-	// var arrayOfRandoms = document.getElementsByTagName('td');
-
-	// console.log(addLettersAr);
-	// function loopThruSubmission(){
-	// 	console.log(document.getElementById('yourChoice'));
-	// }
-};
+	};
 
 	$('.randomLetters').each(function(index){
 		$(this).click(function(){
-			console.log(this);
-			// addLettersAr.push(this.innerHTML);
 			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '</i>';
-			console.log(this.innerHTML);
 		});
 	});
 
 	$('.answerLetter').each(function(index){
 		$(this).click(function(){
-			console.log(this);
-			// addLettersAr.push(this.innerHTML);
 			document.getElementById('yourChoice').innerHTML += '<i>' +  this.innerHTML + '</i>';
 		});
 	});
 
-// var firstCol = [];
+function submitLetters() {
+	var userLetters = document.getElementsByTagName('i');
+	var userAnswer = [];
 
-// for (var i = 0; i <= 10; i++){
-// 	var characters = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-// 	var random = parseInt(Math.random()*characters.length);
-// 	var letter = characters.charAt(random); //returning random letter
-// 	var innerArrays = ['<td>' + letter + '</td>'];
-// 	firstCol.push(innerArrays);
-// };
+	console.log(userLetters[0].innerHTML);
+	for(var i = 0; i <= userLetters.length - 1; i++){
+			
+		userAnswer.push(userLetters[i].innerHTML);//CREATING ARRAY OF USER'S ANSWERS TO DISPLAY TO THEM LATER
+
+		if(userLetters[i].innerHTML == dtNull[i] || dtBoolean[i] || dtString[i] || dtNumber[i] || dtObject[i] || dtUndefined[i]) {
+		document.getElementById('submitBut').innerHTML 
+		= '<h3>GOOD JOB! YOU FOUND ' + userAnswer.toString().replace(/,/g , "") + '</h3>';
+		} 
+	}
+
+	document.getElementById('yourChoice').innerHTML = "";
+}
 
 
-// for (var i = 0; i <= 10; i++){
-// 	document.getElementById('wsBox').innerHTML += '<tr>'+ firstCol[i] + '</tr>';
-// };
+
 
 
