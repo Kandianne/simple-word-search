@@ -1,36 +1,4 @@
 
-//==============SUBMITTING ANSWERS=======================================
-var addLettersAr = [];
-
-function showSubmit(loopThruSubmission) {
-	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
-	// var arrayOfAnswers = document.getElementsByClassName('answerLetter');
-	// var arrayOfRandoms = document.getElementsByTagName('td');
-
-	$('.randomLetters').each(function(index){
-		$(this).click(function(){
-			console.log(this);
-			addLettersAr.push(this.innerHTML);
-			document.getElementById('yourChoice').innerHTML += '<i>' + this.innerHTML + '</i>';
-			console.log(this.innerHTML);
-		})
-	})
-
-	$('.answerLetter').each(function(index){
-		$(this).click(function(){
-			console.log(this);
-			addLettersAr.push(this.innerHTML);
-			document.getElementById('yourChoice').innerHTML += '<i>' +  this.innerHTML + '</i>';
-		})
-	})
-
-	console.log(addLettersAr);
-	function loopThruSubmission(){
-		console.log(document.getElementById('yourChoice'));
-	}
-};
-
-
 
 //==============CREATING GRID OF RANDOM LETTERS=======================================
 
@@ -100,6 +68,48 @@ for(var i = 0; i <= dtUndefined.length - 1; i++){
 }
 
 
+//==============SUBMITTING ANSWERS=======================================
+var addLettersAr = [];
+
+
+function showSubmit() {
+	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
+	document.getElementById('clearBut').innerHTML = '<button onclick="clearLetters()">CLEAR LETTERS</button>';
+	// var arrayOfAnswers = document.getElementsByClassName('answerLetter');
+	// var arrayOfRandoms = document.getElementsByTagName('td');
+
+	// console.log(addLettersAr);
+	// function loopThruSubmission(){
+	// 	console.log(document.getElementById('yourChoice'));
+	// }
+	submitLetters = function() {
+		console.log(addLettersAr)
+		var stringLetters = addLettersAr.join("");
+		console.log(stringLetters);
+	}	
+
+	clearLetters = function() {
+		addLettersAr = [];
+		console.log(addLettersAr)
+		document.getElementById('yourChoice').innerHTML = '';
+	}
+};
+
+$('.randomLetters').each(function(index){
+	$(this).click(function(){
+		addLettersAr.push(this.innerHTML);
+		var abc = document.getElementById('yourChoice').innerHTML +=this.innerHTML;
+		console.log(abc);
+	});
+});
+
+$('.answerLetter').each(function(index){
+	$(this).click(function(){
+		addLettersAr.push(this.innerHTML);
+		var cab =  document.getElementById('yourChoice').innerHTML += this.innerHTML;
+		console.log(cab + "test");
+	});
+});
 
 // var firstCol = [];
 
@@ -115,5 +125,3 @@ for(var i = 0; i <= dtUndefined.length - 1; i++){
 // for (var i = 0; i <= 10; i++){
 // 	document.getElementById('wsBox').innerHTML += '<tr>'+ firstCol[i] + '</tr>';
 // };
-
-
