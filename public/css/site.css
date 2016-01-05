@@ -1,3 +1,24 @@
 body {
 	font-family: verdana;
+	background: #A7FFE7;
+}
+
+table, ol, div { 
+	margin: 3em auto;
+}
+
+h3, h6 {
+	text-align: center;
+}
+
+td { 
+	padding: 6px; text-align: center; box-shadow: 1px 1px 2px black;
+}
+
+td:hover { 
+	color: green; font-weight: bold;
+}
+		
+#yourChoice, #submitBut, #clearBut { 
+	text-align: center;
 }

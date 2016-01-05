@@ -71,11 +71,12 @@ for(var i = 0; i <= dtUndefined.length - 1; i++){
 
 
 //==============SUBMITTING ANSWERS=======================================
-
+// var addLettersAr = [];
 
 function showSubmit() {
 	document.getElementById('submitBut').innerHTML = '<button onclick="submitLetters()">SUBMIT LETTERS</button>';
-	};
+	document.getElementById('clearBut').innerHTML = '<button onclick="clearLetters()">CLEAR LETTERS</button>';
+};
 
 	$('.randomLetters').each(function(index){
 		$(this).click(function(){
@@ -93,18 +94,29 @@ function submitLetters() {
 	var userLetters = document.getElementsByTagName('i');
 	var userAnswer = [];
 
-	console.log(userLetters[0].innerHTML);
 	for(var i = 0; i <= userLetters.length - 1; i++){
 			
 		userAnswer.push(userLetters[i].innerHTML);//CREATING ARRAY OF USER'S ANSWERS TO DISPLAY TO THEM LATER
+		submittedAnswer = userAnswer.toString().replace(/,/g , "");
+	}
+		console.log(submittedAnswer);
+	
 
-		if(userLetters[i].innerHTML == dtNull[i] || dtBoolean[i] || dtString[i] || dtNumber[i] || dtObject[i] || dtUndefined[i]) {
+	if(submittedAnswer === dtNull || dtBoolean || dtString || dtNumber || dtObject || dtUndefined) {
 		document.getElementById('submitBut').innerHTML 
 		= '<h3>GOOD JOB! YOU FOUND ' + userAnswer.toString().replace(/,/g , "") + '</h3>';
-		} 
+		} else {
+		document.getElementById('submitBut').innerHTML 
+		= '<h3>' + userAnswer.toString().replace(/,/g , "") + ' is not the answer! Try again.</h3>';
 	}
 
 	document.getElementById('yourChoice').innerHTML = "";
+	document.getElementById('clearBut').innerHTML = "";
+}
+
+function clearLetters() {
+	userAnswer = [];
+	document.getElementById('yourChoice').innerHTML = '';
 }
 
 
